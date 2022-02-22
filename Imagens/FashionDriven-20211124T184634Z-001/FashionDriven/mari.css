@@ -1,0 +1,13 @@
+header{
+    width: 100vw;
+    height: 89px;
+    background-color: #404EED;
+}
+.topo{
+    display: flex;
+    margin-left: 80px;
+   
+}
+header .topo img{
+    margin-top: 15px;
+}
