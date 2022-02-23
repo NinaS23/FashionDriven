@@ -1,0 +1,136 @@
+header{
+    width: 100%;
+    height: 89px;
+    background-color: #404EED;
+}
+.topo{
+    width: 100%;
+ 
+    margin-left: 80px;
+   
+}
+header .topo img{
+    margin-top: 15px;
+}
+
+.fundoCinza{
+    background-color: #F2F2F2;
+    border-radius: 5px ;
+    width: 100px;
+    height: 100px;
+    
+}
+h2{
+    margin-left: 125.6px;
+    margin-top: 38.32px;
+    margin-bottom: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.09px;
+    color: #232323;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.tshirt{
+    display: flex;
+    margin-left: 125.6px;
+    
+}
+.margin-left{
+    margin-left: 50px;
+}
+.camisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+.ajuste{
+    margin-left: 50px;
+}
+h3{
+    margin-top: 18.3px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21.09px;
+    color: #232323;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.geralINcoluna{
+    display: flex;
+    flex-direction: column;
+}
+.GeralLadoAlado{
+    display: flex;
+}
+.genteBonita{
+    background-color: #404EED;
+     margin-left: 128px;
+     width: 100%;
+}
+.bunita{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    width: 396.27px;
+    margin-left: 23%;
+     height: 40px;
+     border-radius: 10px;
+     background-color: #F2F2F2;
+     border-style: none;
+}
+h1{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21.09px;
+    color: #FCFCFC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+button{
+    width: 398.61px;
+    height: 40px;
+    background-color: #C4C4C4;
+    margin-left: 23%;
+    border-style: none;
+    margin-top: 23.76px;
+    border-radius: 10px;
+}
+.H2{
+    font-size: 24px;
+    line-height: 28.13px;
+     padding-top: 30.57px;
+ 
+}
+.Hzinho2{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    line-height: 23.44px;
+    font-weight: 400;
+    margin-left: 15%;
+    margin-top: 7.94px;
+}
+strong{
+    font-style: bold;
+    font-weight: 700;
+}
+.blusaComCriador:first-child{
+    margin-left: 129.61px;
+}
+.blusaComCriador{
+    margin-left: 38.12px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 260px;
+}
+footer{
+    background-color: #F2F2F2;
+ 
+    
+}
+.Imgs{
+    display: flex;
+   
+}
