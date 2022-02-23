@@ -36,19 +36,20 @@ h2{
     margin-left: 125.6px;
     
 }
-.margin-left{
-    margin-left: 50px;
-}
+
 .camisa{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: 30px;
    
 }
-.ajuste{
-    margin-left: 50px;
+.camisa h3{
+    text-align: center;
+    width: 115px;
 }
+
 h3{
     margin-top: 20.3px;
     font-weight: 400;
