@@ -1,18 +1,16 @@
 let nome;
-
-function QualSeuNome() {
+let escolhidaBlusa;
+let escolhidaGola;
+let escolhidoTecido;
+ function QualSeuNome() {
     do{
-        let nome = prompt("Qual Seu nome?")
+        nome = prompt("Qual Seu nome?")
     }
     while(nome !== undefined) {
      console.log(nome)
     }
-
     //essa ta boa tbm n 
-
-
-
-}
+} 
 
 function escolherCamisa(camisa) {
     // 1 - eu selecionei a classe camisa-Selecionada (so tem no css), 
@@ -21,22 +19,43 @@ function escolherCamisa(camisa) {
     
     // 3 - eu falei: se a div com as imgs já tem uma selecionada , tirar a seleção da anterior da img APENAS
     if (camisaEscolhida !== null) {
-        camisaEscolhida.classList.remove("CamisaEscolhida");
+        camisaEscolhida.classList.remove("Camisa-Selecionada");
     } else {
         // 4 - se n teve a seleção ainda , selecionar (add a borda azul)
-        camisa.classList.add(".Camisa-Selecionada");
+        camisa.classList.add("Camisa-Selecionada");
         //5- sendo sincera , n entendi oq a escolhidaBlusa , so sei que ela poe algo no html 
-        escolhidaBlusa = document.querySelector(".camisa-Selecionada img .fundoCinza ").innerHTML;
+        escolhidaBlusa = document.querySelector(".Camisa-Selecionada img .fundoCinza ").innerHTML;
 
     }
 //usar o método do pato de borracha que o professor disse , vai que ajuda ;-; (função , me ajudakkkk pfv)
 
 // dica do professor : sempre vai cair no else 
+console.log(escolhidaBlusa)
+}
 
+function escolherGola(gola){
+    const golaEscolhida = document.querySelector(".gola-selecionada")
+    if(golaEscolhida !== null){
+        golaEscolhida.classList.remove("gola-selecionada")
+    }else{
+        gola.classList.add("gola-selecionada")
+        escolhidaGola = document.querySelector(".gola-selecionada img  .fundoCinza").innerHTML
+    }
+    console.log(escolhidaGola)
+}
+
+function escolherTecido(tecido){
+    const TecidoEscolhido = document.querySelector(".tecido-selecionado")
+    if(TecidoEscolhido !== null){
+        TecidoEscolhido.classList.remove("tecido-selecionado")
+    }else{
+        tecido.classList.add("tecido-selecionado")
+        escolhidoTecido = document.querySelector(".tecido-selecionado img  .fundoCinza").innerHTML
+    }
+    console.log(escolhidoTecido)
 }
 
 
-console.log(escolherCamisa)
 function LinkObrigatorio() {
     var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
     var regex = new RegExp(expression);
@@ -54,4 +73,4 @@ function LinkObrigatorio() {
 
 }
 
-QualSeuNome()
+//QualSeuNome()
