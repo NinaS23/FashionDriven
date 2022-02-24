@@ -1,9 +1,14 @@
+let Nome;
+
 function QualSeuNome() {
-    const Nome = prompt("Qual Seu nome?")
-    if (Nome === "") {
+     do{
+        let Nome = prompt("Qual Seu nome?")
+    }
+    while(!Nome) {
         prompt("Qual Seu nome?")
     }
-    //essa ta boa tbm
+
+    //essa ta boa tbm n 
 }
 
 
@@ -19,7 +24,7 @@ function escolherCamisa(camisa) {
         camisaEscolhida.classList.remove("CamisaEscolhida");
     } else {
         // 4 - se n teve a seleção ainda , selecionar (add a borda azul)
-        camisa.classList.add("CamisaEscolher");
+        camisa.classList.add(".Camisa-Selecionada");
         //5- sendo sincera , n entendi oq a escolhidaBlusa , so sei que ela poe algo no html 
         escolhidaBlusa = document.querySelector(".camisa-Selecionada img .fundoCinza ").innerHTML;
 
