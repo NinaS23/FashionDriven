@@ -24,19 +24,19 @@
             <div class="MontarBlusa">
                 <!--primeira parte das blusas -->
                 <h2>Escolha o modelo</h2>
-                <div class="tshirt">
+                <div class="camisas">
                     <div class="camisa">
-                        <div class="tamanhoBlusa">
-                            <img class="fundoCinza" src="tshirt.png" alt="tshirt">
+                        <div  class="tamanhoBlusa ">
+                            <img onclick="escolherCamisa(this)" class="fundoCinza roupa" src="tshirt.png" alt="tshirt">
                         </div>
                         <h3>T-shirt</h3>
                     </div>
                     <div class="camisa">
-                        <img class=" tamanhoBlusa fundoCinza " src="Camiseta.png" alt="Camiseta">
+                        <img onclick="escolherCamisa(this)" class=" tamanhoBlusa  fundoCinza " src="Camiseta.png" alt="Camiseta">
                         <h3 class="">Camiseta</h3>
                     </div>
                     <div class="camisa">
-                        <img class=" tamanhoBlusa fundoCinza " src="Mangalonga.png" alt="Mangalonga">
+                        <img  onclick="escolherCamisa(this)" class=" tamanhoBlusa fundoCinza " src="Mangalonga.png" alt="Mangalonga">
                         <h3 class="">Manga longa</h3>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
              <!--segunda parte das blusas -->
             <div class="MontarBlusa">
                 <h2>Escolha a gola </h2>
-                <div class="tshirt">
+                <div class="camisas">
                     <div class="camisa">
                         <img class=" tamanhoBlusa fundoCinza" src="GolaV.png" alt="Gola V">
                         <h3>Gola V</h3>
@@ -62,7 +62,7 @@
                <!--última parte das blusas -->
             <div class="MontarBlusa">
                 <h2>Escolha o tecido </h2>
-                <div class="tshirt">
+                <div class="camisas">
                     <div class="camisa">
                         <img class="tamanhoBlusa fundoCinza" src="Seda.png" alt="tecido-seda">
                         <h3>Seda</h3>
@@ -75,53 +75,54 @@
                         <img class="tamanhoBlusa fundoCinza" src="Poliester.png" alt="tecido-poliester">
                         <h3 class="">Poliester</h3>
                     </div>
-                </div>
+                </div>''
             </div>
             <h2>Imagem de referência</h2>
-            <input type="text" placeholder="Insira o link">
-            <button>
-                <h1>Confirmar pedido</h1>
+            <input class="link" type="text" placeholder="Insira o link">
+            <button >
+                <h1 onclick="LinkObrigatorio()">Confirmar pedido</h1>
             </button>
         </div>
-            <div class="genteBonita">
+            <div class="genteBonita">''
                 <img class="bunita" src="ilustração.png" alt="moça com  fundo colorido no fundo">
             </div>
 
         </div> 
      </main>
      <footer>
-         <h2 class="H2">Ultimos pedidos</h2>
-         <div class="Imgs">
+         <h2 class="UltimosPedidos">Ultimos pedidos</h2>
+         <div class="imagens">
              <div class="blusaComCriador">
                  <img src="Blusa1.png" alt="Blusa1">
-                 <h4 class="Hzinho2"><strong>Criador:</strong> Agata</h4>
+                 <h4 class="Criador"><strong>Criador:</strong> Agata</h4>
              </div>
              <div class="blusaComCriador">
                 <img src="Blusa2.png" alt="Blusa2">
-                <h4 class="Hzinho2"><strong>Criador:</strong> Agata</h4>
+                <h4 class="Criador"><strong>Criador:</strong> Agata</h4>
             </div>
             <div class="blusaComCriador">
                 <img src="Blusa3.png" alt="Blusa3">
-                <h4 class="Hzinho2"><strong>Criador:</strong> Agata</h4>
+                <h4 class="Criador"><strong>Criador:</strong> Agata</h4>
             </div>
            
             <div class="blusaComCriador">
                 <img src="Blusa5.png" alt="Blusa5">
-                <h4 class="Hzinho2"><strong>Criador:</strong> Agata</h4>
+                <h4 class="Criador"><strong>Criador:</strong> Agata</h4>
             </div>
             <div class="blusaComCriador">
                 <img src="Blusa3.png" alt="Blusa3">
-                <h4 class="Hzinho2"><strong>Criador:</strong> Agata</h4>
+                <h4 class="Criador"><strong>Criador:</strong> Agata</h4>
             </div>
             <div class="blusaComCriador">
                 <img src="Blusa1.png" alt="Blusa1">
-                <h4 class="Hzinho2"><strong>Criador:</strong> Aata</h4>
+                <h4 class="Criador"><strong>Criador:</strong> Aata</h4>
             </div>
             <div class="blusaComCriador">
                 <img src="Blusa2.png" alt="Blusa2">
-                <h4 class="Hzinho2"><strong>Criador:</strong> Agata</h4>
+                <h4 class="Criador"><strong>Criador:</strong> Agata</h4>
             </div>
          </div>
      </footer>
+     <script src="script.js"></script>
 </body>
 </html>
