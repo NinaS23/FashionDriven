@@ -1,18 +1,18 @@
-let Nome;
+let nome;
 
 function QualSeuNome() {
-     do{
-        let Nome = prompt("Qual Seu nome?")
+    do{
+        let nome = prompt("Qual Seu nome?")
     }
-    while(!Nome) {
-        prompt("Qual Seu nome?")
+    while(nome !== undefined) {
+     console.log(nome)
     }
 
     //essa ta boa tbm n 
+
+
+
 }
-
-
-
 
 function escolherCamisa(camisa) {
     // 1 - eu selecionei a classe camisa-Selecionada (so tem no css), 
