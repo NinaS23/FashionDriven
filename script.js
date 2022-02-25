@@ -2,6 +2,7 @@ let nome;
 let escolhidaBlusa;
 let escolhidaGola;
 let escolhidoTecido;
+let input
 
 
  function QualSeuNome() {
@@ -27,7 +28,7 @@ function escolherCamisa(camisa) {
         escolhidaBlusa = document.querySelector(".Camisa-Selecionada h3").innerHTML;
 
     }
-  
+    checkButton()
 console.log(escolhidaBlusa)
 }
 //função de verificar gola
@@ -39,6 +40,7 @@ function escolherGola(gola){
         gola.classList.add("gola-selecionada")
         escolhidaGola = document.querySelector(".gola-selecionada h3").innerHTML
     }
+    checkButton()
     
     console.log(escolhidaGola)
 }
@@ -53,7 +55,7 @@ function escolherTecido(tecido){
     }
     
     console.log(escolhidoTecido)
-   
+    checkButton()
 }
 
 //função de validar o input 
@@ -61,28 +63,17 @@ function LinkObrigatorio() {
   
     var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
     var regex = new RegExp(expression);
-    var t = 'www.google.com';
-    let Input = document.querySelector(".link").value
-    if (Input === "") {
-        alert("ops...algo deu errado . Verifique se preencheu tudo, por favor!")
-    } else if (Input.match(regex)) {
-        alert("bom link")
-       
-      
-    } else {
-        (Input !== regex)
-        alert("link ruim, coloque uma url válida por favor")
-    }
-    
-    checkButton()// n funciona
+    input = document.querySelector(".link").value
+    console.log(input)
+    return input
+
+    //checkButton()// n funciona
 }
 
 function checkButton(){
 let fecharPedido = document.querySelector("button")
-if(escolhidoTecido && LinkObrigatorio && escolhidaGola && escolhidaBlusa) {
+if(escolhidoTecido && input && escolhidaGola && escolhidaBlusa) {
   fecharPedido.classList.add("azul-ao-clicar")
-
-   
 }
 sucessoOuFracassoNoPedido()
 }
@@ -112,6 +103,8 @@ function renderizarBlusasNaTela(resposta){
         `
     })
 }
+
+
 pegarBlusas()
 //QualSeuNome()
 
