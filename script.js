@@ -65,8 +65,6 @@ function LinkObrigatorio() {
     var regex = new RegExp(expression);
     input = document.querySelector(".link").value
     console.log(input)
-    return input
-
     //checkButton()// n funciona
 }
 
