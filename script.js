@@ -81,21 +81,37 @@ function checkButton(){
 let fecharPedido = document.querySelector("button")
 if(escolhidoTecido && LinkObrigatorio && escolhidaGola && escolhidaBlusa) {
   fecharPedido.classList.add("azul-ao-clicar")
-  alert(`Sucesso , seus pedidos são: ${escolhidaBlusa} , ${escolhidoTecido} e ${escolhidaGola} `)
-   
-}else{
-    alert("Ops, não conseguimos processar sua encomenda")
-}
 
+   
 }
-// essa aqui, ela retorna a resposta errada
-/*
+sucessoOuFracassoNoPedido()
+}
+// essa aqui, ela retorna a resposta errada 
+
 function sucessoOuFracassoNoPedido(){
     if(checkButton){
         alert(`Sucesso , seus pedidos são:${escolhidaBlusa} , ${escolhidoTecido} e ${escolhidaGola} `)
     }else{
         alert("Ops, não conseguimos processar sua encomenda")
     }
-}*/
 
+}
+
+function pegarBlusas(){
+  let pegarBlusa = axios.get("https://mock-api.driven.com.br/api/v4/shirts-api/shirts")
+    pegarBlusa.then(renderizarBlusasNaTela)
+}
+function renderizarBlusasNaTela(resposta){
+    let imagens =  document.querySelector(".imagens")
+    resposta.data.map((modelo)=>{
+        imagens.innerHTML +=`
+        <div class="blusaComCriador" >
+        <img class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa1">
+            <h4 class="Criador"><strong>Criador:</strong> ${modelo.owner}</h4>
+        </div> 
+        `
+    })
+}
+pegarBlusas()
 //QualSeuNome()
+

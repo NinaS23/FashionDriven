@@ -159,3 +159,8 @@ border: 3px solid #404EED;
 .azul-ao-clicar{
     background-color: #404EED;
 }
+.limitar-imagem-usuario{
+    width: 180px;
+    height: auto;
+    margin-top: 5px;
+}
