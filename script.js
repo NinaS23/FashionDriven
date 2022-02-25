@@ -10,6 +10,7 @@ let escolhidoTecido;
      console.log(nome)
     }
     //essa ta boa tbm n 
+
 } 
 //função de verificar camisa
 function escolherCamisa(camisa) {
@@ -19,11 +20,12 @@ function escolherCamisa(camisa) {
     if (camisaEscolhida !== null) {
         camisaEscolhida.classList.remove("Camisa-Selecionada");
     } else {
+      
         camisa.classList.add("Camisa-Selecionada");
         escolhidaBlusa = document.querySelector(".Camisa-Selecionada h3").innerHTML;
 
     }
-
+  
 console.log(escolhidaBlusa)
 }
 //função de verificar gola
@@ -35,6 +37,7 @@ function escolherGola(gola){
         gola.classList.add("gola-selecionada")
         escolhidaGola = document.querySelector(".gola-selecionada h3").innerHTML
     }
+    checkButton()
     console.log(escolhidaGola)
 }
 //função de verificar tecido
@@ -46,7 +49,9 @@ function escolherTecido(tecido){
         tecido.classList.add("tecido-selecionado")
         escolhidoTecido = document.querySelector(".tecido-selecionado h3").innerHTML
     }
+    
     console.log(escolhidoTecido)
+    checkButton()
 }
 
 //função de validar o input 
@@ -59,6 +64,7 @@ function LinkObrigatorio() {
         alert("ops...algo deu errado . Verifique se preencheu tudo, por favor!")
     } else if (Input.match(regex)) {
         alert("bom link")
+        checkButton()
     } else {
         (Input !== regex)
         alert("link ruim, coloque uma url válida por favor")
@@ -66,14 +72,17 @@ function LinkObrigatorio() {
 
 
 }
-function fecharEncomenda(){
-    let fecharPedido = document.querySelector("button")
- if(!escolherCamisa   && !escolherGola && !escolherTecido  && !LinkObrigatorio ){
-    alert("Ops...não conseguimos processar a sua encomenda")
- }else{
-    fecharPedido.classList.add("azul-ao-clicar")
-    alert(`Encomenda feita com sucesso!${escolhidaBlusa},${escolhidaGola} e ${escolhidoTecido}` )
- }
+
+/* função fechar encomenda , se escolherCamisa e escolherGola e escolherTecido e LinkObrigatorio 
+forem vdd  , aparecer um alert confirmando a encomenda da pessoa , se n , um alert dando erro pra 
+o usuário verificar 
+
+*/
+function checkButton(){
+let fecharPedido = document.querySelector("button")
+if(escolherCamisa &&  LinkObrigatorio && escolherGola && escolherTecido) {
+  fecharPedido.classList.add("azul-ao-clicar")
 }
 
+}
 //QualSeuNome()
