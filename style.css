@@ -37,7 +37,7 @@ h2{
     
 }
 
-.camisa{
+.camisa, .gola, .tecido{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +45,8 @@ h2{
     margin-left: 30px;
    
 }
-.camisa h3{
+
+.camisa h3, .gola h3, .tecido h3{
     text-align: center;
     width: 115px;
 }
@@ -144,12 +145,15 @@ footer{
 width: 100px;
 height: 100px;
 }
-.Camisa-Selecionada{
+.Camisa-Selecionada img{
 border: 3px solid #404EED;
 }
-.gola-selecionada{
+.gola-selecionada img{
     border: 3px solid #404EED;
 }
-.tecido-selecionado{
+.tecido-selecionado img{
     border: 3px solid #404EED;
+}
+.azul-ao-clicar{
+    background-color: #404EED;
 }

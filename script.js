@@ -11,51 +11,45 @@ let escolhidoTecido;
     }
     //essa ta boa tbm n 
 } 
-
+//função de verificar camisa
 function escolherCamisa(camisa) {
-    // 1 - eu selecionei a classe camisa-Selecionada (so tem no css), 
-    //pq ela é pra dizer que é a img que vai ter que ser com a borda azul ( blz)
     const camisaEscolhida = document.querySelector(".Camisa-Selecionada");
     
-    // 3 - eu falei: se a div com as imgs já tem uma selecionada , tirar a seleção da anterior da img APENAS
+ 
     if (camisaEscolhida !== null) {
         camisaEscolhida.classList.remove("Camisa-Selecionada");
     } else {
-        // 4 - se n teve a seleção ainda , selecionar (add a borda azul)
         camisa.classList.add("Camisa-Selecionada");
-        //5- sendo sincera , n entendi oq a escolhidaBlusa , so sei que ela poe algo no html 
-        escolhidaBlusa = document.querySelector(".Camisa-Selecionada img .fundoCinza ").innerHTML;
+        escolhidaBlusa = document.querySelector(".Camisa-Selecionada h3").innerHTML;
 
     }
-//usar o método do pato de borracha que o professor disse , vai que ajuda ;-; (função , me ajudakkkk pfv)
 
-// dica do professor : sempre vai cair no else 
 console.log(escolhidaBlusa)
 }
-
+//função de verificar gola
 function escolherGola(gola){
     const golaEscolhida = document.querySelector(".gola-selecionada")
     if(golaEscolhida !== null){
         golaEscolhida.classList.remove("gola-selecionada")
     }else{
         gola.classList.add("gola-selecionada")
-        escolhidaGola = document.querySelector(".gola-selecionada img  .fundoCinza").innerHTML
+        escolhidaGola = document.querySelector(".gola-selecionada h3").innerHTML
     }
     console.log(escolhidaGola)
 }
-
+//função de verificar tecido
 function escolherTecido(tecido){
     const TecidoEscolhido = document.querySelector(".tecido-selecionado")
     if(TecidoEscolhido !== null){
         TecidoEscolhido.classList.remove("tecido-selecionado")
     }else{
         tecido.classList.add("tecido-selecionado")
-        escolhidoTecido = document.querySelector(".tecido-selecionado img  .fundoCinza").innerHTML
+        escolhidoTecido = document.querySelector(".tecido-selecionado h3").innerHTML
     }
     console.log(escolhidoTecido)
 }
 
-
+//função de validar o input 
 function LinkObrigatorio() {
     var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
     var regex = new RegExp(expression);
@@ -69,8 +63,17 @@ function LinkObrigatorio() {
         (Input !== regex)
         alert("link ruim, coloque uma url válida por favor")
     }
-//essa funciona , tbm depois de tanto validar input na vida , eu to mecanica nesse de url...kkkkk
 
+
+}
+function fecharEncomenda(){
+    let fecharPedido = document.querySelector("button")
+ if(!escolherCamisa   && !escolherGola && !escolherTecido  && !LinkObrigatorio ){
+    alert("Ops...não conseguimos processar a sua encomenda")
+ }else{
+    fecharPedido.classList.add("azul-ao-clicar")
+    alert(`Encomenda feita com sucesso!${escolhidaBlusa},${escolhidaGola} e ${escolhidoTecido}` )
+ }
 }
 
 //QualSeuNome()

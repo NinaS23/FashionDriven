@@ -25,18 +25,16 @@
                 <!--primeira parte das blusas -->
                 <h2>Escolha o modelo</h2>
                 <div class="camisas">
-                    <div class="camisa">
-                        <div  class="tamanhoBlusa ">
-                            <img onclick="escolherCamisa(this)" class="fundoCinza roupa" src="tshirt.png" alt="tshirt">
-                        </div>
+                    <div class="camisa" onclick="escolherCamisa(this)">
+                        <img  class="fundoCinza roupa tamanhoBlusa" src="tshirt.png" alt="tshirt">
                         <h3>T-shirt</h3>
                     </div>
-                    <div class="camisa">
-                        <img onclick="escolherCamisa(this)" class=" tamanhoBlusa  fundoCinza " src="Camiseta.png" alt="Camiseta">
+                    <div class="camisa" onclick="escolherCamisa(this)">
+                        <img  class=" tamanhoBlusa  fundoCinza " src="Camiseta.png" alt="Camiseta">
                         <h3 class="">Camiseta</h3>
                     </div>
-                    <div class="camisa">
-                        <img  onclick="escolherCamisa(this)" class=" tamanhoBlusa fundoCinza " src="Mangalonga.png" alt="Mangalonga">
+                    <div class="camisa" onclick="escolherCamisa(this)">
+                        <img   class=" tamanhoBlusa fundoCinza " src="Mangalonga.png" alt="Mangalonga">
                         <h3 class="">Manga longa</h3>
                     </div>
                 </div>
@@ -45,16 +43,16 @@
             <div class="MontarBlusa">
                 <h2>Escolha a gola </h2>
                 <div class="camisas">
-                    <div class="camisa">
-                        <img  onclick="escolherGola(this)" class=" tamanhoBlusa fundoCinza" src="GolaV.png" alt="Gola V">
+                    <div class="gola" onclick="escolherGola(this)">
+                        <img   class=" tamanhoBlusa fundoCinza" src="GolaV.png" alt="Gola V">
                         <h3>Gola V</h3>
                     </div>
-                    <div class="camisa">
-                        <img onclick="escolherGola(this)" class=" tamanhoBlusa fundoCinza " src="GolaRedonda.png" alt="Gola Redonda">
+                    <div class="gola"  onclick="escolherGola(this)" >
+                        <img class=" tamanhoBlusa fundoCinza " src="GolaRedonda.png" alt="Gola Redonda">
                         <h3 class="">Gola Redonda</h3>
                     </div>
-                    <div class="camisa">
-                        <img onclick="escolherGola(this)" class=" tamanhoBlusa fundoCinza" src="GolaPolo.png" alt="Gola  Polo">
+                    <div class="gola" onclick="escolherGola(this)" >
+                        <img  class=" tamanhoBlusa fundoCinza" src="GolaPolo.png" alt="Gola  Polo">
                         <h3 class="">Gola Polo</h3>
                     </div>
                 </div>
@@ -63,24 +61,24 @@
             <div class="MontarBlusa">
                 <h2>Escolha o tecido </h2>
                 <div class="camisas">
-                    <div class="camisa">
-                        <img onclick= "escolherTecido(this)" class="tamanhoBlusa fundoCinza" src="Seda.png" alt="tecido-seda">
+                    <div class="tecido" onclick= "escolherTecido(this)">
+                        <img class="tamanhoBlusa fundoCinza" src="Seda.png" alt="tecido-seda">
                         <h3>Seda</h3>
                     </div>
-                    <div class="camisa">
-                        <img onclick= "escolherTecido(this)" class="tamanhoBlusa fundoCinza " src="Algodão.png" alt="tecido-Algodão">
+                    <div class="tecido" onclick= "escolherTecido(this)">
+                        <img class="tamanhoBlusa fundoCinza " src="Algodão.png" alt="tecido-Algodão">
                         <h3 class="">Algodão</h3>
                     </div>
-                    <div class="camisa">
-                        <img onclick= "escolherTecido(this)" class="tamanhoBlusa fundoCinza" src="Poliester.png" alt="tecido-poliester">
+                    <div class="tecido" onclick= "escolherTecido(this)">
+                        <img class="tamanhoBlusa fundoCinza" src="Poliester.png" alt="tecido-poliester">
                         <h3 class="">Poliester</h3>
                     </div>
                 </div>''
             </div>
             <h2>Imagem de referência</h2>
             <input class="link" type="text" placeholder="Insira o link">
-            <button >
-                <h1 onclick="LinkObrigatorio()">Confirmar pedido</h1>
+            <button onclick = " fecharEncomenda()" class = "" id="fundo-azul">
+                <h1>Confirmar pedido</h1>
             </button>
         </div>
             <div class="genteBonita">
