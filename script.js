@@ -67,13 +67,14 @@ function LinkObrigatorio() {
         alert("ops...algo deu errado . Verifique se preencheu tudo, por favor!")
     } else if (Input.match(regex)) {
         alert("bom link")
+       
       
     } else {
         (Input !== regex)
         alert("link ruim, coloque uma url válida por favor")
     }
     
-    checkButton()
+    checkButton()// n funciona
 }
 
 function checkButton(){

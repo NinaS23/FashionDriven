@@ -1,12 +1,12 @@
 header{
-    width: 100%;
+    width: 100vw;
     height: 89px;
     background-color: #404EED;
+ 
 }
 .topo{
-    width: 100%;
- 
-    margin-left: 80px;
+   
+ margin-left: 80px;
    
 }
 header .topo img{
@@ -68,10 +68,10 @@ h3{
 }
 .genteBonita{
     background-color: #404EED;
-     margin-left: 128px;
-     width: 100%;
+     margin-left: 126px;
+     width: 100vw;
 }
-.bunita{
+.bunita {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,6 +130,7 @@ strong{
 }
 footer{
     background-color: #F2F2F2;
+    width: 100vw;
  
     
 }
