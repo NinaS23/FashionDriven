@@ -4,6 +4,8 @@ let escolhidaGola;
 let escolhidoTecido;
 let input
 let enviarCamisa;
+let number;
+let string;
 
  function QualSeuNome() {
     do{
@@ -117,7 +119,23 @@ console.log(enviarCamisaFeitaProServidor)
 
 function confirmCamisa(){
     let chamarBlusa =  confirm("Deseja continuar?") 
-    
+    if(chamarBlusa){
+        pegarBlusas()
+      
+        alert(`${[
+            {
+                "id": number,
+                "model": string,
+                "neck": string,
+                "material": string,
+                "image": string,
+                "owner": string,
+                "author": string
+            }
+        ]}`)
+    }
+    console.log(pegarBlusas)
+ 
 }
 pegarBlusas()
 //QualSeuNome()
