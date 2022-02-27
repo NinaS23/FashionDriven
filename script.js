@@ -3,7 +3,7 @@ let escolhidaBlusa;
 let escolhidaGola;
 let escolhidoTecido;
 let input
-
+let enviarCamisa;
 
  function QualSeuNome() {
     do{
@@ -95,14 +95,30 @@ function renderizarBlusasNaTela(resposta){
     resposta.data.map((modelo)=>{
         imagens.innerHTML +=`
         <div class="blusaComCriador" >
-        <img class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa1">
+        <img onclick = "confirmCamisa()" class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa1">
             <h4 class="Criador"><strong>Criador:</strong> ${modelo.owner}</h4>
         </div> 
         `
     })
 }
+function enviarCamisaFeitaProServidor(checkButton){
+    let enviarCamisa = {
+        "model": escolhidaBlusa,
+        "neck": escolherGola,
+        "material": escolhidoTecido,
+        "image": input,
+        "owner": nome
+    
+    }
+let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",enviarCamisa)
+renderizarBlusasNaTela()
+console.log(enviarCamisaFeitaProServidor)
+} 
 
-
+function confirmCamisa(){
+    let chamarBlusa =  confirm("Deseja continuar?") 
+    
+}
 pegarBlusas()
 //QualSeuNome()
 
