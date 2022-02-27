@@ -140,4 +140,5 @@ function confirmCamisa(){
 }
 pegarBlusas()
 QualSeuNome()
+pedidoFeito()
 
