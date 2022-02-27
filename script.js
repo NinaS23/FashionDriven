@@ -107,7 +107,7 @@ function renderizarBlusasNaTela(resposta){
 function enviarCamisaFeitaProServidor(checkButton){
     let enviarCamisa = {
         "model": escolhidaBlusa,
-        "neck": escolherGola,
+        "neck": escolhidaGola,
         "material": escolhidoTecido,
         "image": input,
         "owner": nome
