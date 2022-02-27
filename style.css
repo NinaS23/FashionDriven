@@ -1,12 +1,16 @@
 
+body{
+    width: 100vw;
+}
 header{
     width: 100vw;
     height: 89px;
     background-color: #404EED;
  
 }
+
 .topo{
-  
+
  margin-left: 80px;
    
 }
@@ -70,7 +74,7 @@ h3{
 .genteBonita{
     background-color: #404EED;
      margin-left: 126px;
-     width: 100vw;
+    width: 100vw;
 }
 .bunita {
     display: flex;
