@@ -8,11 +8,12 @@ let number;
 let string;
 
  function QualSeuNome() {
-    do{
-        nome = prompt("Qual Seu nome?")
-    }
-    while(nome !== undefined) {
-     console.log(nome)
+    
+do{
+    nome = prompt("Qual seu nome?")
+}
+    while(nome === ""){
+        nome;
     }
     //essa ta boa tbm n 
 
@@ -138,5 +139,5 @@ function confirmCamisa(){
  
 }
 pegarBlusas()
-//QualSeuNome()
+QualSeuNome()
 
