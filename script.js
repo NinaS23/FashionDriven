@@ -22,7 +22,6 @@ do{
 function escolherCamisa(camisa) {
     const camisaEscolhida = document.querySelector(".Camisa-Selecionada");
     
- 
     if (camisaEscolhida !== null) {
         camisaEscolhida.classList.remove("Camisa-Selecionada");
     } else {
@@ -32,7 +31,7 @@ function escolherCamisa(camisa) {
 
     }
     checkButton()
-console.log(escolhidaBlusa)
+//console.log(escolhidaBlusa)
 }
 //função de verificar gola
 function escolherGola(gola){
@@ -45,7 +44,7 @@ function escolherGola(gola){
     }
     checkButton()
     
-    console.log(escolhidaGola)
+    //console.log(escolhidaGola)
 }
 //função de verificar tecido
 function escolherTecido(tecido){
@@ -57,14 +56,14 @@ function escolherTecido(tecido){
         escolhidoTecido = document.querySelector(".tecido-selecionado p").innerHTML
     }
     
-    console.log(escolhidoTecido)
+    //console.log(escolhidoTecido)
     checkButton()
 }
 
 //função de validar o input 
 function LinkObrigatorio() {
     input = document.querySelector(".link").value
-    //checkButton()// n funciona
+   
 }
 
 function checkButton(){
@@ -86,15 +85,18 @@ function renderizarBlusasNaTela(resposta){
     let imagens =  document.querySelector(".imagens")
     resposta.data.map((modelo)=>{
         imagens.innerHTML +=`
-        <div class="blusaComCriador" >
-        <img onclick = "confirmCamisa()" class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa1">
-            <h4 class="Criador"><strong>Criador:</strong> ${modelo.owner}</h4>
+        <div class="blusaComCriador" onclick = "confirmCamisa(this)" >
+        <img  class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa1">
+            <h4 class="Criador"><strong>Criador:</strong> <span>${modelo.owner}</span></h4>
         </div> 
+        <p class = "hide modelo-servidor" >${modelo.model}</p>
+        <p class = "hide gola-servidor" >${modelo.neck}</p>
+        <p class = "hide tecido-servidor" >${modelo.material}</p>
         `
     })
 }
 function enviarCamisaFeitaProServidor(checkButton){
-    console.log(input)
+    //console.log(input)
     let enviarCamisa = {
         "model": escolhidaBlusa,
         "neck": escolhidaGola,
@@ -104,38 +106,40 @@ function enviarCamisaFeitaProServidor(checkButton){
         "author": nome    
     }
 let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",enviarCamisa)
-console.log(enviarCamisa)
-renderizarBlusasNaTela()
-pedidoFeito.then(pegarBlusas)
+//console.log(enviarCamisa)
+pedidoFeito.then(confirmarEncomenda)
 pedidoFeito.catch(naoEnviouOPedido)
 } 
 function naoEnviouOPedido(erro){
-console.log('entrei no catch')
-console.log(erro.pedidoFeito.status)
-  
+alert('Ops, não conseguimos processar sua encomenda')
+}
+
+function confirmarEncomenda(resposta){
+    console.log(resposta.data)
+    // alertar o usuario com um alert() para que ele saiba que a encomenda foi feita
+    alert("SUCESSO, Encomenda concluida!!")
+    //rerenderizar as camisetas feitas pelos usuarios (pegarBlusas())
+    pegarBlusas()
 }
 
 function confirmCamisa(){
     let chamarBlusa =  confirm("Deseja continuar?") 
     if(chamarBlusa){
-        pegarBlusas() 
-        alert(`Dados da camisa Selecionada : ${[
-            {
-                "id": number,
-                "model": string,
-                "neck": string,
-                "material": string,
-                "image": string,
-                "owner": string,
-                "author": string
-            }
-        ]}`)
+        axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts" ,  {
+                
+            "model": document.querySelector(".modelo-servidor ").innerHTML,
+            "neck": document.querySelector(".gola-servidor ").innerHTML,
+            "material": document.querySelector(".tecido-servidor ").innerHTML,
+            "image": document.querySelector(".limitar-imagem-usuario").src,
+            "owner": nome,
+            "author": document.querySelector("h4 span ").innerHTML
+        })
     }
-    console.log(pegarBlusas)
- 
+    pegarBlusas() 
 }
 pegarBlusas()
 QualSeuNome()
+checkButton()
 
 
 
