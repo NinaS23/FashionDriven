@@ -28,7 +28,7 @@ function escolherCamisa(camisa) {
     } else {
       
         camisa.classList.add("Camisa-Selecionada");
-        escolhidaBlusa = document.querySelector(".Camisa-Selecionada h3").innerHTML;
+        escolhidaBlusa = document.querySelector(".Camisa-Selecionada p").innerHTML;
 
     }
     checkButton()
@@ -41,7 +41,7 @@ function escolherGola(gola){
         golaEscolhida.classList.remove("gola-selecionada")
     }else{
         gola.classList.add("gola-selecionada")
-        escolhidaGola = document.querySelector(".gola-selecionada h3").innerHTML
+        escolhidaGola = document.querySelector(".gola-selecionada p").innerHTML
     }
     checkButton()
     
@@ -54,7 +54,7 @@ function escolherTecido(tecido){
         TecidoEscolhido.classList.remove("tecido-selecionado")
     }else{
         tecido.classList.add("tecido-selecionado")
-        escolhidoTecido = document.querySelector(".tecido-selecionado h3").innerHTML
+        escolhidoTecido = document.querySelector(".tecido-selecionado p").innerHTML
     }
     
     console.log(escolhidoTecido)
@@ -63,31 +63,20 @@ function escolherTecido(tecido){
 
 //função de validar o input 
 function LinkObrigatorio() {
-  
-    var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
-    var regex = new RegExp(expression);
     input = document.querySelector(".link").value
-    console.log(input)
     //checkButton()// n funciona
 }
 
 function checkButton(){
+LinkObrigatorio()
 let fecharPedido = document.querySelector("button")
 if(escolhidoTecido && input && escolhidaGola && escolhidaBlusa) {
   fecharPedido.classList.add("azul-ao-clicar")
 }
-sucessoOuFracassoNoPedido()
+
 }
 // essa aqui, ela retorna a resposta errada 
 
-function sucessoOuFracassoNoPedido(){
-    if(checkButton){
-        alert(`Sucesso , seus pedidos são:${escolhidaBlusa} , ${escolhidoTecido} e ${escolhidaGola} `)
-    }else{
-        alert("Ops, não conseguimos processar sua encomenda")
-    }
-
-}
 
 function pegarBlusas(){
   let pegarBlusa = axios.get("https://mock-api.driven.com.br/api/v4/shirts-api/shirts")
@@ -105,20 +94,26 @@ function renderizarBlusasNaTela(resposta){
     })
 }
 function enviarCamisaFeitaProServidor(checkButton){
+    console.log(input)
     let enviarCamisa = {
         "model": escolhidaBlusa,
         "neck": escolhidaGola,
         "material": escolhidoTecido,
         "image": input,
         "owner": nome,
-        "author": nome
-    
+        "author": nome    
     }
 let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",enviarCamisa)
+console.log(enviarCamisa)
 renderizarBlusasNaTela()
-console.log(pedidoFeito)
-pegarBlusas()
+pedidoFeito.then(pegarBlusas)
+pedidoFeito.catch(naoEnviouOPedido)
 } 
+function naoEnviouOPedido(erro){
+console.log('entrei no catch')
+console.log(erro.pedidoFeito.status)
+  
+}
 
 function confirmCamisa(){
     let chamarBlusa =  confirm("Deseja continuar?") 
@@ -141,6 +136,7 @@ function confirmCamisa(){
 }
 pegarBlusas()
 QualSeuNome()
+
 
 
 

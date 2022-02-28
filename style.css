@@ -168,3 +168,6 @@ border: 3px solid #404EED;
     height: 180px;
     margin-top: 5px;
 }
+.hide{
+    display: none;
+}
