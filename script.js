@@ -73,6 +73,7 @@ if(escolhidoTecido && input && escolhidaGola && escolhidaBlusa) {
   fecharPedido.classList.add("azul-ao-clicar")
 }
 
+
 }
 // essa aqui, ela retorna a resposta errada 
 
@@ -134,6 +135,7 @@ function confirmCamisa(){
             "owner": nome,
             "author": document.querySelector("h4 span ").innerHTML
         })
+       
     }
     pegarBlusas() 
 }
@@ -144,3 +146,6 @@ checkButton()
 
 
 
+// quando a pessoa clica em uma camisa dos ultimos pedidos , ela renderiza a ultima feita
+//n importa qual a pessoa vai clicar
+/* n renderiza a camisa na tela sem que haja um widow reload */
