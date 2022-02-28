@@ -110,20 +110,21 @@ function enviarCamisaFeitaProServidor(checkButton){
         "neck": escolhidaGola,
         "material": escolhidoTecido,
         "image": input,
-        "owner": nome
+        "owner": nome,
+        "author": nome
     
     }
 let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",enviarCamisa)
 renderizarBlusasNaTela()
-console.log(enviarCamisaFeitaProServidor)
+console.log(pedidoFeito)
+pegarBlusas()
 } 
 
 function confirmCamisa(){
     let chamarBlusa =  confirm("Deseja continuar?") 
     if(chamarBlusa){
-        pegarBlusas()
-      
-        alert(`${[
+        pegarBlusas() 
+        alert(`Dados da camisa Selecionada : ${[
             {
                 "id": number,
                 "model": string,
@@ -140,5 +141,6 @@ function confirmCamisa(){
 }
 pegarBlusas()
 QualSeuNome()
-pedidoFeito()
+
+
 
