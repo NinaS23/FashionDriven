@@ -4,7 +4,7 @@ let escolhidaGola;
 let escolhidoTecido;
 let input
 let enviarCamisa;
-
+let modelo;
 
  function QualSeuNome() {
     
@@ -83,17 +83,21 @@ function pegarBlusas(){
 }
 function renderizarBlusasNaTela(resposta){
     let imagens =  document.querySelector(".imagens")
-    resposta.data.map((modelo)=>{
+     let response = resposta.data
+       response.map((modelo)=>{
         imagens.innerHTML +=`
         <div class="blusaComCriador" onclick = "confirmCamisa(this)" >
-        <img  class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa">
+        <img  class = "foto-escolhida limitar-imagem-usuario" src=${modelo.image} alt="Blusa">
             <h4 class="Criador"><strong>Criador:</strong> <span>${modelo.owner}</span></h4>
+              <p class = "hide modelo-servidor" >${modelo.model}</p>
+              <p class = "hide gola-servidor" >${modelo.neck}</p>
+              <p class = "hide tecido-servidor" >${modelo.material}</p>
         </div> 
-        <p class = "hide modelo-servidor" >${modelo.model}</p>
-        <p class = "hide gola-servidor" >${modelo.neck}</p>
-        <p class = "hide tecido-servidor" >${modelo.material}</p>
+       
         `
     })
+
+    
 }
 function enviarCamisaFeitaProServidor(checkButton){
     //console.log(input)
@@ -109,9 +113,11 @@ let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/s
 //console.log(enviarCamisa)
 pedidoFeito.then(confirmarEncomenda)
 pedidoFeito.catch(naoEnviouOPedido)
+console.log(enviarCamisaFeitaProServidor)
 } 
 function naoEnviouOPedido(erro){
 alert('Ops, não conseguimos processar sua encomenda')
+console.log(erro)
 }
 
 function confirmarEncomenda(resposta){
@@ -129,21 +135,23 @@ function confirmarEncomenda(resposta){
 function confirmCamisa(){
     let chamarBlusa =  confirm("Deseja continuar?") 
     if(chamarBlusa){
-        axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts" ,  {
+       axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts" , {
                 
-            "model": document.querySelector(".modelo-servidor ").innerHTML,
-            "neck": document.querySelector(".gola-servidor ").innerHTML,
-            "material": document.querySelector(".tecido-servidor ").innerHTML,
-            "image": document.querySelector(".limitar-imagem-usuario").src,
+            "model": document.querySelector(".modelo-servidor").innerHTML,
+            "neck": document.querySelector(".gola-servidor").innerHTML,
+            "material": document.querySelector(".tecido-servidor").innerHTML,
+            "image": document.querySelector(".foto-escolhida").src,
             "owner": nome,
-            "author": document.querySelector("h4 span ").innerHTML
-        })
-       
+            "author": document.querySelector("h4 span").innerHTML
+    })
+    pegarBlusas()   
     }
-    pegarBlusas() 
+ 
+  
 }
 pegarBlusas()
 QualSeuNome()
+renderizarBlusasNaTela()
 checkButton()
 
 
