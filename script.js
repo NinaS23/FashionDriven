@@ -123,6 +123,10 @@ function confirmarEncomenda(resposta){
     pegarBlusas()
 }
 
+// quando a pessoa clica em uma camisa dos ultimos pedidos , ela renderiza a ultima feita
+//n importa qual a pessoa vai clicar
+/* n renderiza a camisa na tela sem que haja um widow reload */
+
 function confirmCamisa(){
     let chamarBlusa =  confirm("Deseja continuar?") 
     if(chamarBlusa){
@@ -145,7 +149,3 @@ checkButton()
 
 
 
-
-// quando a pessoa clica em uma camisa dos ultimos pedidos , ela renderiza a ultima feita
-//n importa qual a pessoa vai clicar
-/* n renderiza a camisa na tela sem que haja um widow reload */
