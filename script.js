@@ -102,6 +102,11 @@ function renderizarBlusasNaTela(resposta){
    
     console.log(renderizarBlusasNaTela())
 }
+function limparHtml(renderizarBlusasNaTela){
+ if(imagens.innerHTML > 10 ){
+    imagens.innerHTML = ``;
+ }
+}
 function enviarCamisaFeitaProServidor(checkButton){
 
     let enviarCamisa = {
