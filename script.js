@@ -105,6 +105,7 @@ function renderizarBlusasNaTela(resposta){
 function limparHtml(renderizarBlusasNaTela){
  if(imagens.innerHTML > 10 ){
     imagens.innerHTML = ``;
+    //renderizarBlusasNaTela()
  }
 }
 function enviarCamisaFeitaProServidor(checkButton){
