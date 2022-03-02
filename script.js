@@ -4,8 +4,7 @@ let escolhidaGola;
 let escolhidoTecido;
 let input
 let enviarCamisa;
-let number;
-let string;
+
 
  function QualSeuNome() {
     
@@ -15,7 +14,7 @@ do{
     while(nome === ""){
         nome;
     }
-    //essa ta boa tbm n 
+
 
 } 
 //função de verificar camisa
@@ -75,7 +74,7 @@ if(escolhidoTecido && input && escolhidaGola && escolhidaBlusa) {
 
 
 }
-// essa aqui, ela retorna a resposta errada 
+
 
 
 function pegarBlusas(){
@@ -87,7 +86,7 @@ function renderizarBlusasNaTela(resposta){
     resposta.data.map((modelo)=>{
         imagens.innerHTML +=`
         <div class="blusaComCriador" onclick = "confirmCamisa(this)" >
-        <img  class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa1">
+        <img  class = "limitar-imagem-usuario" src=${modelo.image} alt="Blusa">
             <h4 class="Criador"><strong>Criador:</strong> <span>${modelo.owner}</span></h4>
         </div> 
         <p class = "hide modelo-servidor" >${modelo.model}</p>
@@ -146,6 +145,7 @@ function confirmCamisa(){
 pegarBlusas()
 QualSeuNome()
 checkButton()
+
 
 
 
