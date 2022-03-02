@@ -72,7 +72,6 @@ if(escolhidoTecido && input && escolhidaGola && escolhidaBlusa) {
   fecharPedido.classList.add("azul-ao-clicar")
 }
 
-
 }
 
 
@@ -82,7 +81,9 @@ function pegarBlusas(){
     pegarBlusa.then(renderizarBlusasNaTela)
 }
 function renderizarBlusasNaTela(resposta){
+    
     let imagens =  document.querySelector(".imagens")
+   //    imagens.innerHTML = ``;
      let response = resposta.data
        response.map((modelo)=>{
         imagens.innerHTML +=`
@@ -97,6 +98,8 @@ function renderizarBlusasNaTela(resposta){
         `
     })
 
+    
+   
     console.log(renderizarBlusasNaTela())
 }
 function enviarCamisaFeitaProServidor(checkButton){
@@ -110,10 +113,9 @@ function enviarCamisaFeitaProServidor(checkButton){
         "author": nome    
     }
 let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",enviarCamisa)
-console.log(pedidoFeito)
 pedidoFeito.then(confirmarEncomenda)
 pedidoFeito.catch(naoEnviouOPedido)
-console.log(enviarCamisaFeitaProServidor)
+
 } 
 function naoEnviouOPedido(erro){
 alert('Ops, não conseguimos processar sua encomenda')
@@ -144,9 +146,9 @@ function confirmCamisa(){
             "owner": nome,
             "author": document.querySelector("h4 span").innerHTML
     })
-    pegarBlusas()   
+   
     }
- 
+    pegarBlusas()   
   
 }
 pegarBlusas()
