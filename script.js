@@ -30,7 +30,7 @@ function escolherCamisa(camisa) {
 
     }
     checkButton()
-//console.log(escolhidaBlusa)
+
 }
 //função de verificar gola
 function escolherGola(gola){
@@ -43,7 +43,7 @@ function escolherGola(gola){
     }
     checkButton()
     
-    //console.log(escolhidaGola)
+  
 }
 //função de verificar tecido
 function escolherTecido(tecido){
@@ -55,7 +55,7 @@ function escolherTecido(tecido){
         escolhidoTecido = document.querySelector(".tecido-selecionado p").innerHTML
     }
     
-    //console.log(escolhidoTecido)
+  
     checkButton()
 }
 
@@ -97,10 +97,10 @@ function renderizarBlusasNaTela(resposta){
         `
     })
 
-    
+    console.log(renderizarBlusasNaTela())
 }
 function enviarCamisaFeitaProServidor(checkButton){
-    //console.log(input)
+
     let enviarCamisa = {
         "model": escolhidaBlusa,
         "neck": escolhidaGola,
@@ -110,7 +110,7 @@ function enviarCamisaFeitaProServidor(checkButton){
         "author": nome    
     }
 let pedidoFeito = axios.post("https://mock-api.driven.com.br/api/v4/shirts-api/shirts",enviarCamisa)
-//console.log(enviarCamisa)
+console.log(pedidoFeito)
 pedidoFeito.then(confirmarEncomenda)
 pedidoFeito.catch(naoEnviouOPedido)
 console.log(enviarCamisaFeitaProServidor)
@@ -122,14 +122,14 @@ console.log(erro)
 
 function confirmarEncomenda(resposta){
     console.log(resposta.data)
-    // alertar o usuario com um alert() para que ele saiba que a encomenda foi feita
     alert("SUCESSO, Encomenda concluida!!")
-    //rerenderizar as camisetas feitas pelos usuarios (pegarBlusas())
     pegarBlusas()
 }
 
-// quando a pessoa clica em uma camisa dos ultimos pedidos , ela renderiza a ultima feita
-//n importa qual a pessoa vai clicar
+/* quando a pessoa clica em uma camisa dos ultimos pedidos , ela renderiza a ultima feita
+n importa qual a pessoa vai clicar
+*/
+
 /* n renderiza a camisa na tela sem que haja um widow reload */
 
 function confirmCamisa(){
@@ -151,7 +151,6 @@ function confirmCamisa(){
 }
 pegarBlusas()
 QualSeuNome()
-renderizarBlusasNaTela()
 checkButton()
 
 
